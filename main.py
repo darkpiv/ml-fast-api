@@ -3,7 +3,11 @@ from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from modules.picker_wrapper.main import load_model
+import pickle
+
+
+def load_model(path: str):
+    return pickle.load(open(path, 'rb'))
 
 app = FastAPI()
 
